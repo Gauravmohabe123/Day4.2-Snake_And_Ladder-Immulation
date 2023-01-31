@@ -10,24 +10,35 @@ namespace Snake_And_Ladder
             int position = 0;
             int step = 0;
             Random random= new Random();
-            int dice = random.Next(1, 7);
-            Console.WriteLine(dice);
-            int option=random.Next(0,3);
-            switch(option)
+            while (step < 20)
             {
-                case 0:
-                    Console.WriteLine("No play player stayed in the same position");
-                    position = position + 0;
-                    break;
+                int dice = random.Next(1, 7);
+                Console.WriteLine(dice);
+                int option = random.Next(0, 3);
+                switch (option)
+                {
+                    case 0:
+                        Console.WriteLine("No play player stayed in the same position");
+                        position = position + 0;
+                        step = position;
+                        break;
                     case 1:
-                    Console.WriteLine("The player go ahead");
-                    position = position + 1;
-                    break;
+                        Console.WriteLine("The player go ahead");
+                        position = position + 1;
+                        step = position;
+                        break;
                     case 2:
-                    Console.WriteLine("The player go back");
-                    position = position-1;
-                    break;  
+                        position = position - 1;
+                        if (position < 0)
+                        {
+                            position = 0;
+                            step = position;
+                        }
+                        Console.WriteLine("The player go back");
+                        
+                        break;
 
+                }
             }
         }
     }
