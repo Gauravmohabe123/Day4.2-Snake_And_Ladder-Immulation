@@ -9,6 +9,7 @@ namespace Snake_And_Ladder
             Console.WriteLine("Welcome to snake and Ladder game immulation");
             int position = 0;
             int step = 0;
+            int Dicecount = 0;
             Random random= new Random();
             while (step < 100)
             {
@@ -29,7 +30,10 @@ namespace Snake_And_Ladder
                         {
                             position = position - 1;
                             step= position;
-                            Console.WriteLine("you can not move more than 100 step dice again yor position is " + position);
+                        }
+                        else if (position == 100)
+                        {
+                            Console.WriteLine("You reached at final home you won the match" + position);
                             step= position;
                         }
                         else
@@ -37,7 +41,7 @@ namespace Snake_And_Ladder
                             Console.WriteLine("Ladder go ahed your position is :" + position);
                             step= position;
                         }
-                        step = position;
+                        
                         break;
                     case 2:
                         position = position - 1;
@@ -46,8 +50,9 @@ namespace Snake_And_Ladder
                             position = 0;
                             step = position;
                         }
+                        else
                         Console.WriteLine("The player go back");
-                        
+                        step= position;
                         break;
 
                 }
