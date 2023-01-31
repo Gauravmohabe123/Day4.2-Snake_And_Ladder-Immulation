@@ -25,6 +25,18 @@ namespace Snake_And_Ladder
                     case 1:
                         Console.WriteLine("The player go ahead");
                         position = position + 1;
+                        if(position > 100)
+                        {
+                            position = position - 1;
+                            step= position;
+                            Console.WriteLine("you can not move more than 100 step dice again yor position is " + position);
+                            step= position;
+                        }
+                        else
+                        {
+                            Console.WriteLine("Ladder go ahed your position is :" + position);
+                            step= position;
+                        }
                         step = position;
                         break;
                     case 2:
