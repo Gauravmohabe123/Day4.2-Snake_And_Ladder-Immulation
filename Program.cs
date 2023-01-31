@@ -10,7 +10,7 @@ namespace Snake_And_Ladder
             int position = 0;
             int step = 0;
             Random random= new Random();
-            while (step < 20)
+            while (step < 100)
             {
                 int dice = random.Next(1, 7);
                 Console.WriteLine(dice);
