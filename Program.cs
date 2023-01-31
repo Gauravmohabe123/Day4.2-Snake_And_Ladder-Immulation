@@ -7,6 +7,8 @@ namespace Snake_And_Ladder
         static void Main(string[] args)
         {
             Console.WriteLine("Welcome to snake and Ladder game immulation");
+            int position = 0;
+            int step = 0;
         }
     }
 }
