@@ -6,53 +6,65 @@ namespace Snake_And_Ladder
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Welcome to snake and Ladder game immulation");
+            Console.WriteLine("Snake and ladder immulation");
             int position = 0;
+            Random ran = new Random();
+
+
             int step = 0;
-            int Dicecount = 0;
-            Random random= new Random();
             while (step < 100)
             {
-                int dice = random.Next(1, 7);
-                Console.WriteLine(dice);
-                int option = random.Next(0, 3);
+                int Dice = ran.Next(1, 7);
+                Console.WriteLine(Dice);
+
+                int option = ran.Next(0, 3);
+
                 switch (option)
                 {
                     case 0:
-                        Console.WriteLine("No play player stayed in the same position");
                         position = position + 0;
+
+                        Console.WriteLine("No play Your position is: " + position);
                         step = position;
+
                         break;
+
                     case 1:
-                        Console.WriteLine("The player go ahead");
-                        position = position + 1;
-                        if(position > 100)
+                        position = position + Dice;
+                        if (position > 100)
                         {
-                            position = position - 1;
-                            step= position;
+                            position = position - Dice;
+                            step = position;
+
+
                         }
                         else if (position == 100)
                         {
                             Console.WriteLine("You reached at final home you won the match" + position);
-                            step= position;
+                            step = position;
+
                         }
                         else
                         {
                             Console.WriteLine("Ladder go ahed your position is :" + position);
-                            step= position;
+                            step = position;
+
                         }
-                        
+
+
+
                         break;
                     case 2:
-                        position = position - 1;
+                        position = position - Dice;
+
                         if (position < 0)
                         {
                             position = 0;
-                            step = position;
                         }
                         else
-                        Console.WriteLine("The player go back");
-                        step= position;
+                            Console.WriteLine("Snake  go back your position is : " + position);
+                        step = position;
+
                         break;
 
                 }
